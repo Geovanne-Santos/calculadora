@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+    transition: all .5s ease;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+body{
+    background: linear-gradient(45deg, #20262E, #913175, #CD5888, #E9E8E8 );
+    background-size: 300% 300%;
+    animation: colors 10s ease infinite;
+}
+
+@keyframes colors{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.calculator.dark ~ h2{
+    color: white;
+}
+
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
+}
+
+
+.theme-toggle{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #000;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggle.active{
+    color: #222;
+}
+
+.calculator.dark .theme-toggle.active::before{
+    background-color: #f0f0f0;
+}
+.theme-toggle.active::before{
+    background-color: #222;
+}
+
+
+.theme-toggle::before{
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+.burguer-container {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  height: 30px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 999;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #222;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.active .bar1 {
+  transform: translate(0, 0) rotate(-45deg) translateY(12px);
+}
+
+.active .bar2 {opacity: 0;}
+
+.active .bar3 {
+  transform: translate(0, 0) rotate(45deg) translateY(-12px);
+}
+
+
+
+  .calculator.dark .burguer-container .bar1,
+  .calculator.dark .burguer-container .bar2,
+  .calculator.dark .burguer-container .bar3 {
+    background-color: #fff; /* Altera a cor das barras para branco no modo "dark" */
+}
+
+
+
+.side-menu{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: #fcfcfc;
+    z-index: 1;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 0 50px black;
+    }
+
+.side-menu.active{
+    display: flex;
+}
+
+.calculator.dark .side-menu{
+    background-color: #050505;
+}
+
+
+
+#display{
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#display::-webkit-scrollbar{
+    display: block;
+    height: 3px;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 30px;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+
+
+/* Tema escuro */
+
+.calculator.dark{
+    background-color: #0f0f0f;
+}
+
+.calculator.dark #display {
+    color: #fafafa;
+}
+
+.calculator.dark button#limpar {
+    background-color: #642032;
+    color: #f7c1cf;
+} 
+
+.calculator.dark .btn-number{
+    background-color: #3a5b85;
+    color: #f3c4c4;
+} 
+
+.calculator.dark .btn-operators{
+    background-color: #66337a;
+    color: #ddc0eb;
+}
+
+
+
+
+/* Tema Claro */
+
+.calculator{
+    background-color: #f0f0f0;
+}
+
+.calculator #display{
+    color: #070707;
+}
+
+
+.calculator #limpar{
+    background-color: #FFDEDE;
+    color: #8b4e4e;
+}
+
+.calculator .btn-number{
+    background-color: #AAE3E2;
+    color: #070707;
+}
+
+.calculator .btn-operators{
+    background-color: #FD8A8A;
+    color: #5f4040;
+}
+
+.calculator #igual{
+    background-color: #FFDEDE;
+    color: #8b4e4e;
+}
+
+
+
+
+
+
+
+
+
+
+
